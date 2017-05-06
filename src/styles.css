@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body, material-app, md-sidenav-container, .app-container {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.app-container{
+    height:100%;
+    margin:0px;
+    padding:0px;
+}
+
+
+
+
+
+
+
+/*
+** Clickable Lists
+*/
+
+.clickable-list{
+    margin:0;
+    padding:20px 10px 10px 10px;
+}
+.clickable-list md-list-item{
+    padding:0 0 0 -10px;
+    margin:0px;
+}
+.clickable-list md-list-item button{
+    height: 40px;
+    width: 100%;
+    margin:0px;
+}
+
+.clickable-list md-list-item button .item-title{
+    font-size:18px;
+    font-weight: 300;
+    color: #616161;
+}
+.clickable-list md-list-item button md-icon{
+    color: #9e9e9e;
+}
+.clickable-list md-list-item button .badge{
+    border-radius: 30px;
+    height: 20px;
+    min-width: 15px;
+    padding:0px 6px 0px 6px;
+    background: #03a9f4;
+    color:white;
+    font-size:13px;
+    line-height: 21px;
+}
+
+
+
+
+/*
+** Helpers
+*/
+
+.whiteframe{
+    background: #FFFFFF;
+}
+
+.whiteframe.d1{  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);  }
+.whiteframe.d2{  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  }
+.whiteframe.d3{  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  }
+.whiteframe.d4{  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);  }
+.whiteframe.d5{  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);  }
+
+
+
+
+
+
+.z-index-1{
+    z-index:1;
+}
+.z-index-2{
+    z-index:2;
+}
+.z-index-3{
+    z-index:3;
+}
+.z-index-4{
+    z-index:4;
+}
+.z-index-5{
+    z-index:5;
+}
+.z-index-6{
+    z-index:6;
+}
+.z-index-7{
+    z-index:7;
+}
+.z-index-8{
+    z-index:8;
+}
+.z-index-9{
+    z-index:9;
+}
+.z-index-10{
+    z-index:10;
+}
