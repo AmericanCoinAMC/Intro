@@ -7,19 +7,22 @@ html, body, material-app, md-sidenav-container, .app-container {
     height: 100%;
 }
 
-
-.spacer {
-    flex: 1 1 auto;
-}
-
 .app-container{
     height:100%;
     margin:0px;
     padding:0px;
+    background: green;
 }
 
 
 
+.content-container{
+    height:100%;
+    width:100%;
+    margin:0px;
+    padding:0px;
+    background: blue;
+}
 
 
 

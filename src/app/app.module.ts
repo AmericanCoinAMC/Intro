@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 import { AngularFireModule } from 'angularfire2';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
 
 import { AppComponent } from './app.component';
 import { LeftNavigationComponent } from './main/layout/left-navigation/left-navigation.component';
@@ -25,6 +28,11 @@ export const firebaseConfig = {
 };
 
 
+export function HttpLoaderFactory(http: Http) {
+    return new TranslateHttpLoader(http, '/languages', '-lang.json');
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +48,14 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
       MaterialModule.forRoot(),
-      FlexLayoutModule
+      FlexLayoutModule,
+      TranslateModule.forRoot({
+          loader: {
+              provide: TranslateLoader,
+              useFactory: HttpLoaderFactory,
+              deps: [Http]
+          }
+      })
   ],
   providers: [],
   bootstrap: [AppComponent]
