@@ -14,7 +14,6 @@ import { LeftNavigationComponent } from './main/layout/left-navigation/left-navi
 import { HeaderComponent } from './main/layout/header/header.component';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
-import { TasksComponent } from './main/tasks/tasks.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAkLPGBNEgTdMkursaPKrWRhG4k8tkanhc',
