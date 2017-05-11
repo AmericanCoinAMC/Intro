@@ -30,6 +30,33 @@
 
 
 
+
+.main-splash{
+    background: url(../assets/background.png) no-repeat center center;
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align:center;
+}
+
+.main-splash img {
+    max-width:250px;
+}
+
+h1{
+    color:white;
+    font-size:40px;
+    font-weight: 800;
+}
+
+
+
+
 .sidenav{
     width:280px;
     background:black;
@@ -47,6 +74,7 @@
 .clickable-list md-divider{
     height:0.1px;
     background:white;
+    opacity: 0.2;
 }
 .clickable-list md-list-item{
     padding:0 0 0 -10px;
