@@ -1,0 +1,84 @@
+.page-header{
+    padding: 5px 15px 5px 15px;
+    background: black;
+}
+
+.page-header img{
+    max-width: 50px;
+}
+
+.page-header h3{
+    margin-left:10px;
+}
+
+
+
+.app-container{
+    height:100%;
+    margin:0px;
+    padding:0px;
+}
+
+
+
+.content-container{
+    height:100%;
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+
+
+
+.sidenav{
+    width:280px;
+    background:black;
+}
+
+
+/*
+** Clickable Lists
+*/
+
+.clickable-list{
+    margin:0;
+    padding:20px 10px 10px 10px;
+}
+.clickable-list md-divider{
+    height:0.1px;
+    background:white;
+}
+.clickable-list md-list-item{
+    padding:0 0 0 -10px;
+    margin:0px;
+}
+.clickable-list md-list-item button{
+    height: 40px;
+    width: 100%;
+    margin:0px;
+}
+
+.clickable-list md-list-item button .item-title{
+    font-size:18px;
+    font-weight: 300;
+    color: white;
+}
+.clickable-list md-list-item button md-icon{
+    color: white;
+}
+.clickable-list md-list-item button .badge{
+    border-radius: 30px;
+    height: 20px;
+    min-width: 15px;
+    padding:0px 6px 0px 6px;
+    background: #03a9f4;
+    color:white;
+    font-size:13px;
+    line-height: 21px;
+}
+
+
+
+.language-button img{
+    max-width:25px;
+}

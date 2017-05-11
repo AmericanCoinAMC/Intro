@@ -1,0 +1,56 @@
+<div class="wallet-container">
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        <div fxFlex>
+
+            <div fxLayout="column" style="padding:10px;">
+                <h1>Send & Receive Funds Instantly</h1>
+
+                <p>We have to put some information about how easy it is to set up the wallet,
+                    create backups, load backups. Initially, we have to only provide an overview but
+                    this is a section that has to pontentially end up becoming some kind of Tutorial + Download Center.</p>
+
+                <h2>Download the AmericanCoin Wallet</h2>
+
+                <p>Select the option that matches your operating system and the AMC Wallet will be downloaded
+                to your computer. After that, double click on it and you're ready to create or load your
+                AmericanCoin Wallet.</p>
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                    <button md-button (click)="hello()" fxFlex class="os-button">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img md-list-avatar src="assets/windows.png" alt="Windows">
+                            <div fxLayout="column">
+                                <span class="os-title">Windows</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button md-button (click)="hello()" fxFlex class="os-button">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img md-list-avatar src="assets/mac.png" alt="Mac">
+                            <div fxLayout="column">
+                                <span class="os-title">Mac</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button md-button (click)="hello()" fxFlex class="os-button">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img md-list-avatar src="assets/linux.png" alt="Linux">
+                            <div fxLayout="column">
+                                <span class="os-title">Linux</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div fxFlex>
+            <img src="assets/wallet.png" alt="Wallet">
+        </div>
+    </div>
+
+</div>

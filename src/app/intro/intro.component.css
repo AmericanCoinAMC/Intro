@@ -1,0 +1,30 @@
+.intro-container{
+    margin-bottom:150px;
+}
+
+.main-splash{
+    background: url(../../assets/background.png) no-repeat center center;
+    /* Full height */
+    height: 95%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align:center;
+}
+
+.main-splash img {
+    max-width:250px;
+}
+
+.main-splash h1{
+    color:white;
+    font-size:40px;
+    font-weight: 800;
+}
+
+
+
+

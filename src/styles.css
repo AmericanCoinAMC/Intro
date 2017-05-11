@@ -3,66 +3,14 @@
 html, body, material-app, md-sidenav-container, .app-container {
     margin: 0;
     width: 100%;
-    max-width: 100%;
     height: 100%;
-}
-
-.app-container{
-    height:100%;
-    margin:0px;
-    padding:0px;
-    background: green;
-}
-
-
-
-.content-container{
-    height:100%;
-    width:100%;
-    margin:0px;
-    padding:0px;
-    background: blue;
+    overflow: hidden;
 }
 
 
 
 
-/*
-** Clickable Lists
-*/
 
-.clickable-list{
-    margin:0;
-    padding:20px 10px 10px 10px;
-}
-.clickable-list md-list-item{
-    padding:0 0 0 -10px;
-    margin:0px;
-}
-.clickable-list md-list-item button{
-    height: 40px;
-    width: 100%;
-    margin:0px;
-}
-
-.clickable-list md-list-item button .item-title{
-    font-size:18px;
-    font-weight: 300;
-    color: #616161;
-}
-.clickable-list md-list-item button md-icon{
-    color: #9e9e9e;
-}
-.clickable-list md-list-item button .badge{
-    border-radius: 30px;
-    height: 20px;
-    min-width: 15px;
-    padding:0px 6px 0px 6px;
-    background: #03a9f4;
-    color:white;
-    font-size:13px;
-    line-height: 21px;
-}
 
 
 

@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="main-splash">
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <img src="assets/logohr.png" alt="logo" [ngStyle.xs]="{'width.px': 170}">
+
+        <h1>{{ 'INTRO_SLOGAN' | translate}}</h1>
+    </div>
+
+</div>
+
+<div class="intro-container">
+
+
+    <app-whatis></app-whatis>
+    <app-philosophy></app-philosophy>
+    <app-wallet></app-wallet>
+
+
+</div>

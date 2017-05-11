@@ -1,1 +1,67 @@
-<app-main></app-main>
+<md-toolbar color="primary" class="page-header">
+
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
+        <img src="assets/logo.png">
+        <h3>AmericanCoin</h3>
+
+        <span fxFlex></span>
+
+        <button md-button [mdMenuTriggerFor]="menu" class="language-button" fxShow.xs="false" fxShow="true">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <img src="assets/{{selectedLanguage.value}}.png" alt="Language"> &nbsp;
+                {{selectedLanguage.display}}
+            </div>
+        </button>
+        <md-menu #menu="mdMenu" fxShow.xs="false" fxShow="true">
+            <button md-menu-item
+                    *ngFor="let langs of supportedLangs; let i = index"
+                    (click)="selectLang(langs.value)" class="language-button">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <img src="assets/{{langs.value}}.png" alt="Language"> &nbsp;
+                    {{langs.display}}
+                </div>
+            </button>
+        </md-menu>
+
+        <!--<button  md-icon-button>
+            <md-icon class="fa-2x" fontSet="fa" fontIcon="fa-github"></md-icon>
+        </button>-->
+
+        <button md-icon-button (click)="sidenav.toggle()">
+            <md-icon *ngIf="!sidenav.opened">menu</md-icon>
+            <md-icon *ngIf="sidenav.opened">arrow_forward</md-icon>
+        </button>
+    </div>
+</md-toolbar>
+
+<div class="app-container">
+
+    <md-sidenav-container>
+        <router-outlet></router-outlet>
+
+
+
+        <!-- Side Navigation -->
+        <md-sidenav #sidenav class="sidenav" mode="over" align="end">
+            <md-list class="clickable-list" fxFlex>
+                <md-list-item>
+                    <button md-button fxFlex (click)="helloWorld()">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <span class="item-title">Home</span>
+                        </div>
+                    </button>
+                </md-list-item>
+
+                <md-divider></md-divider>
+
+                <md-list-item>
+                    <button md-button fxFlex (click)="toggleSidenav()">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <span class="item-title">About the Project</span>
+                        </div>
+                    </button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+    </md-sidenav-container>
+</div>
