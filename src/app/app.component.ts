@@ -1,35 +1,56 @@
 import { Component, OnInit , ViewChild , ElementRef, Inject } from '@angular/core';
-import { TranslateService } from '../languages';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RoutesRecognized } from '@angular/router';
+
+import { TranslateService } from './common/languages';
 import {MdSnackBar, MdSidenav} from '@angular/material';
 import { DOCUMENT } from '@angular/platform-browser';
-import {PageScrollInstance, PageScrollService} from 'ng2-page-scroll';
-
+import {PageScrollService, PageScrollInstance} from 'ng2-page-scroll';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
-    public translatedText: string;
     public selectedLanguage: any;
     public supportedLangs: any;
 
-    @ViewChild('sidenav') public sidenav: MdSidenav;
+    @ViewChild('sidenav') public _sidenav: MdSidenav;
     @ViewChild('container')
     private container: ElementRef;
 
-    constructor(private _translate: TranslateService, private _snackBar: MdSnackBar, private pageScrollService: PageScrollService , @Inject(DOCUMENT) private document: any) { }
+    constructor(private _translate: TranslateService,
+                private _snackBar: MdSnackBar,
+                private _router: Router,
+                private _pageScrollService: PageScrollService,
+                @Inject(DOCUMENT) private document: any) {
+        /*
+        * Routing Subscription
+        * */
+        this._router.events.subscribe((val) => {
+            // see also
+            if (val instanceof NavigationStart) {
+                if (this._sidenav.opened) {
+                    this._sidenav.close();
+                }
+            }else if (val instanceof NavigationEnd) {
+
+            }else if (val instanceof NavigationCancel) {
+
+            }else if (val instanceof NavigationError) {
+
+            }else if (val instanceof RoutesRecognized) {}
+        });
+    }
 
 
     /*
     * Language Related
     * */
     ngOnInit() {
-        /*
-        * Language Related
-        * */
 
+        // Translations
         this.supportedLangs = [
             { display: 'English', value: 'en' },
             { display: 'Español', value: 'es' }
@@ -40,13 +61,14 @@ export class AppComponent implements OnInit {
             locale = this._translate.getDefaultLanguage();
         }
 
-        this.selectedLanguage = this._translate.buildLanguage(locale);
+        this.selectedLanguage = TranslateService.buildLanguage(locale);
         this._translate.use(locale);
+
     }
 
     selectLang(lang: string) {
         // set current lang;
-        this.selectedLanguage = this._translate.buildLanguage(lang);
+        this.selectedLanguage = TranslateService.buildLanguage(lang);
         localStorage.setItem('localeId', lang);
 
         this._snackBar.open(this.selectedLanguage.display + this._translate.instant('INTRO_CONTROLLER_IS_LOADING'), 'Ok', {
@@ -57,45 +79,33 @@ export class AppComponent implements OnInit {
         }, 3000);
     }
 
+
+
     /*
-    * Navigation Related
+    * URL Loading
     * */
-
-    goto(location: string, type: string): void {
-        let self = this;
-
-        if (self.sidenav.opened) {
-            self.sidenav.close();
-
-            setTimeout(function(){
-                /*let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(self.document, '#contact');
-                 console.log(self.pageScrollService);
-                 self.pageScrollService.start(pageScrollInstance);*/
-                /*let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#' +
-                 location);
-
-                 this._pageScrollService.start(pageScrollInstance);*/
-                if (type && type === 'url') {
-                    self.openUrl(location);
-                }else {
-                    self.updateHash(location);
-                }
-            }, 500);
-        } else {
-            if (type && type === 'url') {
-                self.openUrl(location);
-            }else {
-                self.updateHash(location);
-            }
-        }
-    };
-
-    updateHash (location: string): void {
-        history.pushState('', document.title, window.location.pathname);
-        window.location.hash = location;
-    };
 
     openUrl (location: string): void {
         window.open(location, '_blank');
-    };
+    }
+
+
+
+    /*
+    * Scroll to Top
+    * */
+
+    showFab (): boolean {
+        // Scroll
+        const doc = document.getElementById('inner-app-scroll-container');
+        console.log(doc);
+        const top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        console.log(top);
+        return top > 20;
+    }
+
+    scrollToTop(): void {
+        const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#inner-app-scroll-container');
+        this._pageScrollService.start(pageScrollInstance);
+    }
 }

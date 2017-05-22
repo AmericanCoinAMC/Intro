@@ -8,64 +8,110 @@ html, body, material-app, md-sidenav-container, .app-container {
 
 
 
+.head-bg{
+    width: 100%;
+    height:200px;
+    position:absolute;
+    background: #283593;
+    padding:100px;
+    z-index:0;
+}
 
+.content-card{
+    margin: 25px 0 25px 0;
+    padding:35px;
+}
+
+
+.service-card{
+    margin: 25px;
+}
+.service-card div{
+    padding:15px;
+}
+
+.service-card img{
+    max-width:100%;
+}
+
+
+h1, h2{
+    color:#3f51b5;
+}
+
+
+
+p{
+    font-size: 22px;
+    font-weight: 100;
+}
+
+
+
+
+
+
+.button-list{
+    height:50px;
+    width:100%;
+}
+
+.button-list h3{
+    margin:0 0 0 10px;
+    font-size:20px;
+    font-weight: 200;
+}
+
+.button-list img{
+    max-height: 36px;
+}
 
 
 
 
 
 /*
-** Helpers
+* Portfolio
 */
+.portfolio-container{
+    padding:10px;
+    margin:30px 0px 0px 0px;
 
-.whiteframe{
-    background: #FFFFFF;
 }
-
-.whiteframe.d1{  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);  }
-.whiteframe.d2{  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  }
-.whiteframe.d3{  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  }
-.whiteframe.d4{  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);  }
-.whiteframe.d5{  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);  }
+.portfolio-container img{
+    max-width: 100%;
+}
 
 
+.slogan{
+    font-size:18px;
+    font-weight: 200;
+    color:#283593;
+}
 
+.services-provided{
+    margin: 15px 0 15px 0;
+}
 
-
-
-.z-index-1{
-    z-index:1;
-}
-.z-index-2{
-    z-index:2;
-}
-.z-index-3{
-    z-index:3;
-}
-.z-index-4{
-    z-index:4;
-}
-.z-index-5{
-    z-index:5;
-}
-.z-index-6{
-    z-index:6;
-}
-.z-index-7{
-    z-index:7;
-}
-.z-index-8{
-    z-index:8;
-}
-.z-index-9{
-    z-index:9;
-}
-.z-index-10{
-    z-index:10;
+.services-provided img{
+    max-width: 60px;
 }
 
 
 
+.portfolio-service-container{
+
+}
+.portfolio-service-container md-divider{
+    margin: 30px 0 30px 0;
+}
+.portfolio-service-container .service-block{
+    padding:35px;
+}
+
+/*
+* Materialize
+*/
 
 
 
