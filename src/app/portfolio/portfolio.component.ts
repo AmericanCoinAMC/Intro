@@ -36,12 +36,12 @@ export class PortfolioComponent implements OnInit {
         {
             long: "G'Day",
             short: 'gday',
-            services: ['software', 'graphic-design', 'marketing']
+            services: ['software', 'graphic-design',  'productions', 'marketing']
         },
         {
             long: 'Celestial Salt',
             short: 'cs',
-            services: ['software', 'graphic-design', 'marketing']
+            services: ['software', 'graphic-design',  'productions', 'marketing']
         }
     ];
     activeSection: string;
