@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
 
         let locale = localStorage.getItem('localeId');
         if (!locale) {
-            locale = this._translate.getDefaultLanguage();
+            locale = this._translate.getDefaultLanguage().value;
         }
 
         this.selectedLanguage = TranslateService.buildLanguage(locale);
@@ -94,15 +94,6 @@ export class AppComponent implements OnInit {
     /*
     * Scroll to Top
     * */
-
-    showFab (): boolean {
-        // Scroll
-        const doc = document.getElementById('inner-app-scroll-container');
-        console.log(doc);
-        const top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-        console.log(top);
-        return top > 20;
-    }
 
     scrollToTop(): void {
         const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#inner-app-scroll-container');

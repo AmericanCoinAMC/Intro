@@ -20,7 +20,7 @@ export class TranslateService {
 
     private translate(key: string): string {
         // private perform translation
-        let translation = key;
+        const translation = key;
 
         if (this._translations[this.currentLang] && this._translations[this.currentLang][key]) {
             return this._translations[this.currentLang][key];
@@ -34,9 +34,9 @@ export class TranslateService {
         return this.translate(key);
     }
 
-    public getDefaultLanguage(): string {
-        let longLang: string = navigator.language;
-        let fields: any[] =  longLang.split('-');
+    public getDefaultLanguage(): any {
+        const longLang: string = navigator.language;
+        const fields: any[] =  longLang.split('-');
         return TranslateService.buildLanguage(fields[0]);
     }
 
