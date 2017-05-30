@@ -1,7 +1,7 @@
 import { Component, OnInit , ViewChild , ElementRef, Inject } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RoutesRecognized } from '@angular/router';
 
-import { TranslateService } from './common/languages';
+import { TranslateService } from './languages';
 import {MdSnackBar, MdSidenav} from '@angular/material';
 import { DOCUMENT } from '@angular/platform-browser';
 import {PageScrollService, PageScrollInstance} from 'ng2-page-scroll';

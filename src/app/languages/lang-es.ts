@@ -5,7 +5,7 @@ export const LANG_ES_NAME = 'es';
 
 export const LANG_ES_TRANS = {
     // Meta Tags
-    'HOME_TITLE': 'Construyendo las Aplicaciones del Futuro',
-    'INTRO_CONTROLLER_IS_LOADING': ' is loading.',
+    'HOME_TITLE': 'AtomicAppSeed',
+    'HOME_DESCRIPTION': 'Angular 4, Angular Material, AngularFire & AtomicBase',
 
 };

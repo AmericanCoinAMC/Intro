@@ -26,7 +26,7 @@
     "@ngx-meta/core": "^0.4.0-rc.2",
     "@ngx-translate/core": "^6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
-    "angularfire2": "^2.0.0-beta.7-pre",
+    "angularfire2": "^4.0.0-rc0",
     "autobahn": "^17.5.2",
     "core-js": "^2.4.1",
     "firebase": "^3.9.0",

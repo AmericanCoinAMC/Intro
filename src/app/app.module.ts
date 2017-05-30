@@ -10,9 +10,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
-import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './common/languages/index';
+import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './languages/index';
 
-import { routes } from './common/app.routes';
+import { routes } from './routes/app.routes';
 
 import { MetaModule } from '@ngx-meta/core';
 
@@ -21,10 +21,7 @@ import { environment } from '../environments/environment';
 
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-
-
+import { HomeComponent } from './components/home/home.component';
 
 
 
