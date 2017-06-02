@@ -1,13 +1,153 @@
-<div fxLayout="column">
+<md-sidenav-container>
     <div>
-        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="center center" fxFlex>
-            <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100" class="description">
-                <h1>{{ 'HOME_TITLE' | translate}}</h1>
-                <p>{{ 'HOME_DESCRIPTION' | translate}}</p>
+        <md-toolbar class="page-header">
+            <div fxFlex>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <img src="assets/images/logohr.png" alt="logo">
+                    <h3>AmericanCoin</h3>
+
+                    <span fxFlex></span>
+
+                    <div fxShow.xs="false">
+                        <button md-button (click)="scrollTo('wallet')">
+                            Wallet
+                        </button>
+
+                        <button md-button (click)="openUrl('http://chainradar.com/amc/blocks')">
+                            Blockchain Explorer
+                        </button>
+
+                        <button md-button (click)="scrollTo('specs')">
+                            White Paper
+                        </button>
+
+                        <button md-button (click)="scrollTo('downloads')">
+                            Downloads
+                        </button>
+
+                        <button md-button (click)="scrollTo('contact')">
+                            Contact
+                        </button>
+                    </div>
+
+                    <!--<button md-icon-button [mdMenuTriggerFor]="menu" class="language-button">
+                        <img src="assets/images/{{selectedLanguage.value}}.png" alt="Language">
+                    </button>
+
+                    <md-menu #menu="mdMenu">
+                        <button md-menu-item
+                                *ngFor="let langs of supportedLangs; let i = index"
+                                (click)="selectLang(langs.value)" class="language-button">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img src="assets/images/{{langs.value}}.png" alt="Language"> &nbsp;
+                                {{langs.display}}
+                            </div>
+                        </button>
+                    </md-menu>-->
+
+                    <button md-icon-button (click)="sidenav.toggle()">
+                        <md-icon *ngIf="!sidenav.opened">menu</md-icon>
+                        <md-icon *ngIf="sidenav.opened">arrow_forward</md-icon>
+                    </button>
+                </div>
+            </div>
+        </md-toolbar>
+
+
+
+
+        <div>
+            <div fxLayout="row" fxLayoutAlign="center center" class="main-splash">
+
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <img src="assets/images/logohr.png" alt="logo" [ngStyle.xs]="{'width.px': 170}">
+
+                    <h1>In Decentralization We Trust</h1>
+                </div>
+
             </div>
         </div>
+
+
+
+        <div id="about">
+            <app-whatis></app-whatis>
+        </div>
+        <div id="wallet">
+            <app-wallet></app-wallet>
+        </div>
+        <div id="mining">
+            <app-mining></app-mining>
+        </div>
+        <div id="specs">
+            <app-specs></app-specs>
+        </div>
+        <div id="downloads">
+            <app-downloads></app-downloads>
+        </div>
+        <div id="contact">
+            <app-contact></app-contact>
+        </div>
     </div>
-</div>
 
 
+
+    <!-- Side Navigation -->
+    <md-sidenav #sidenav class="sidenav" mode="over" align="end">
+        <md-list class="clickable-list" style="text-align:left;" fxFlex>
+            <md-list-item>
+                <button md-button fxFlex (click)="scrollTo('about')">
+                    <span class="item-title">About</span>
+                </button>
+            </md-list-item>
+
+            <md-list-item>
+                <button md-button fxFlex (click)="scrollTo('wallet')">
+                    <span class="item-title">Wallet</span>
+                </button>
+            </md-list-item>
+
+
+            <md-list-item>
+                <button md-button fxFlex (click)="scrollTo('mining')">
+                    <span class="item-title">Mining Pool</span>
+                </button>
+            </md-list-item>
+
+            <md-list-item>
+                <button md-button fxFlex (click)="scrollTo('specs')">
+                    <span class="item-title">Technical Specifications</span>
+                </button>
+            </md-list-item>
+
+            <md-list-item>
+                <button md-button fxFlex (click)="scrollTo('downloads')">
+                    <span class="item-title">Downloads</span>
+                </button>
+            </md-list-item>
+
+            <md-list-item>
+                <button md-button fxFlex (click)="openUrl('http://chainradar.com/amc/blocks')">
+                    <span class="item-title">Blockchain Explorer</span>
+                </button>
+            </md-list-item>
+
+            <md-list-item>
+                <button md-button fxFlex (click)="openUrl('https://github.com/AmericanCoinAMC/Core')">
+                    <span class="item-title">Source Code</span>
+                </button>
+            </md-list-item>
+
+            <md-list-item>
+                <button md-button fxFlex (click)="scrollTo('contact')">
+                    <span class="item-title">Contact</span>
+                </button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+
+
+
+</md-sidenav-container>
 

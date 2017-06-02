@@ -8,11 +8,11 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { routes } from './routes/app.routes';
+
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './languages/index';
-
-import { routes } from './routes/app.routes';
 
 import { MetaModule } from '@ngx-meta/core';
 
@@ -21,7 +21,13 @@ import { environment } from '../environments/environment';
 
 
 import { AppComponent } from './app.component';
+import { WhatisComponent } from './components/home/whatis/whatis.component';
+import { WalletComponent } from './components/home/wallet/wallet.component';
 import { HomeComponent } from './components/home/home.component';
+import { MiningComponent } from './components/home/mining/mining.component';
+import { SpecsComponent } from './components/home/specs/specs.component';
+import { DownloadsComponent } from './components/home/downloads/downloads.component';
+import { ContactComponent } from './components/home/contact/contact.component';
 
 
 
@@ -31,7 +37,13 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
       TranslatePipe,
       AppComponent,
-      HomeComponent
+      WhatisComponent,
+      WalletComponent,
+      HomeComponent,
+      MiningComponent,
+      SpecsComponent,
+      DownloadsComponent,
+      ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +53,9 @@ import { HomeComponent } from './components/home/home.component';
       MaterialModule,
       FlexLayoutModule,
       Ng2PageScrollModule.forRoot(),
-      RouterModule.forRoot(routes),
       MetaModule.forRoot(),
-      AngularFireModule.initializeApp(environment.firebase)
+      AngularFireModule.initializeApp(environment.firebase),
+      RouterModule.forRoot(routes),
   ],
   providers: [ TRANSLATION_PROVIDERS, TranslateService],
   bootstrap: [AppComponent]

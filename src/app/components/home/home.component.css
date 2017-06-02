@@ -1,22 +1,166 @@
-.splash{
 
+
+
+
+.page-header{
+    padding: 0px 10px 0px 10px;
+    background:#071b33;
+    color:#FFFFFF;
 }
 
-.description{
-    padding:35px;
-    text-align: left;
+
+.page-header h3{
+    color:#FFFFFF;
 }
 
-.video-container iframe{
-    margin-top:25px;
+.page-header img{
+    max-width: 45px;
 }
 
-.overview{
-    background:white;
-    text-align: center;
-    padding:15px;
+.page-header h3{
+    margin-left:10px;
+    font-weight: 300;
 }
 
-.service-container{
 
+
+.app-container{
+    height:100%;
+    margin:0px;
+    padding:0px;
 }
+
+
+
+.content-container{
+    height:100%;
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+
+
+
+
+/*.main-splash{
+    background: url(../../../assets/images/background.png) no-repeat center center;
+    Full height
+    height: 600px;
+
+    background-size: cover;
+    background-attachment: fixed;
+    text-align:center;
+}*/
+
+
+.main-splash{
+    background: rgba(9,20,36,1);
+    background: -moz-linear-gradient(left, rgba(9,20,36,1) 0%, rgba(0,40,104,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(9,20,36,1)), color-stop(100%, rgba(0,40,104,1)));
+    background: -webkit-linear-gradient(left, rgba(9,20,36,1) 0%, rgba(0,40,104,1) 100%);
+    background: -o-linear-gradient(left, rgba(9,20,36,1) 0%, rgba(0,40,104,1) 100%);
+    background: -ms-linear-gradient(left, rgba(9,20,36,1) 0%, rgba(0,40,104,1) 100%);
+    background: linear-gradient(to right, rgba(9,20,36,1) 0%, rgba(0,40,104,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#091424', endColorstr='#002868', GradientType=1 );
+
+    min-height:600px;
+}
+
+.main-splash img {
+    max-width:250px;
+}
+
+h1{
+    color:white;
+    font-size:40px;
+    font-weight: 800;
+}
+
+
+
+/*
+* Navigation
+*/
+
+.active-navigation{
+    color:#283593;
+}
+
+
+.sidenav{
+    width:280px;
+}
+
+
+
+
+
+.language-button img{
+    max-width:25px;
+}
+
+
+
+
+
+
+.footer{
+    padding:45px;
+    background: #283593;
+    color:white;
+}
+
+
+
+
+
+
+
+
+/*
+** Clickable Lists
+*/
+
+.clickable-list{
+    margin:0;
+    padding:20px 10px 10px 10px;
+}
+
+.clickable-list md-list-item{
+    padding:0 0 0 -10px;
+    margin:0px;
+}
+.clickable-list md-list-item button{
+    height: 40px;
+    width: 100%;
+    margin:0px;
+    text-align:left;
+}
+
+.clickable-list md-list-item button .item-title{
+    font-size:18px;
+    font-weight: 300;
+}
+.clickable-list md-list-item button md-icon{
+}
+.clickable-list md-list-item button .badge{
+    border-radius: 30px;
+    height: 20px;
+    min-width: 15px;
+    padding:0px 6px 0px 6px;
+    background: #03a9f4;
+    color:white;
+    font-size:13px;
+    line-height: 21px;
+}
+
+
+
+
+
+
+
+
+
+
+

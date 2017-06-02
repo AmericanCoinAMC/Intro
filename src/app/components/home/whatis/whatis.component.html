@@ -1,0 +1,38 @@
+<div fxLayout="column" style="margin: 15px 0 15px 0;">
+    <div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+
+            <div fxFlex="25" fxFlex.xs="100" fxFlex.sm="100">
+                <md-list class="nav-list">
+                    <md-list-item *ngFor="let section of sections;" style="margin-top:10px;">
+                        <button md-button (click)="activateSection(section)" class="button-list"
+                                [ngClass]="{'active-item': activeSection.code == section.code}" fxFlex>
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img src="{{section.icon}}" alt="{{section.name}}">
+                                <h3>{{section.name}}</h3>
+                            </div>
+                        </button>
+                    </md-list-item>
+                </md-list>
+            </div>
+            <div fxFlex="75" fxFlex.xs="100" fxFlex.sm="100">
+
+                <div class="whatis-section-container">
+                    <div class="whatis-section" [@sectionPanel]="sectionState">
+                        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex
+                             fxLayoutAlign="center center">
+                            <div fxFlex="50" style="padding:25px;text-align:left;">
+                                <h2 style="margin:0px;">{{activeSection.name}}</h2>
+                                <p style="margin:0px;">{{activeSection.description}}</p>
+                            </div>
+                            <div fxFlex="50" style="padding:25px;">
+                                <img src="{{activeSection.image}}" alt="{{activeSection.name}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

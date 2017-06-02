@@ -1,0 +1,97 @@
+
+
+<h1 style="text-align: center;margin:35px 0 35px 0; font-size:40px;">Downloads</h1>
+
+<div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex fxLayoutAlign="center center" class="downloads-container">
+        <div fxFlex>
+            <div fxLayout="column" style="padding:25px;">
+                <h2>AmericanCoin</h2>
+                <p>Run your own seed node or solo-mine using the simplewallet.</p>
+                <div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
+                        <button [mdMenuTriggerFor]="cliMenu" md-raised-button>
+                            Download
+                        </button>
+                        <button md-button (click)="openUrl('https://github.com/AmericanCoinAMC/Core')">
+                            Documentation
+                        </button>
+                    </div>
+                </div>
+
+                <md-menu #cliMenu="mdMenu">
+                    <button md-menu-item (click)="openUrl('downloadForLinux')">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img src="assets/images/os/linux.png" alt="OS" style="width:30px;">
+                            <span style="margin-left:10px;">Download for Linux</span>
+                        </div>
+                    </button>
+                    <button md-menu-item (click)="openUrl('downloadForWindows')">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img src="assets/images/os/windows.png" alt="OS" style="width:30px;">
+                            <span style="margin-left:10px;">Download for Windows</span>
+                        </div>
+                    </button>
+                    <button md-menu-item (click)="openUrl('downloadForMac')">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img src="assets/images/os/mac.png" alt="OS" style="width:30px;">
+                            <span style="margin-left:10px;">Download for Mac</span>
+                        </div>
+                    </button>
+                </md-menu>
+            </div>
+        </div>
+        <div fxFlex>
+            <div fxLayout="column" style="padding:25px;">
+                <h2>Official Wallet</h2>
+
+                <p>Send and Receive AmericanCoin Instantly with almost 0 fees.</p>
+                <div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
+                        <button [mdMenuTriggerFor]="walletMenu" md-raised-button>
+                            Download
+                        </button>
+                        <button md-button (click)="openUrl('https://github.com/AmericanCoinAMC/Wallet')">
+                            Documentation
+                        </button>
+                    </div>
+                </div>
+
+                <md-menu #walletMenu="mdMenu">
+                    <button md-menu-item (click)="openUrl('downloadForLinux')">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img src="assets/images/os/linux.png" alt="OS" style="width:30px;">
+                            <span style="margin-left:10px;">Download for Linux</span>
+                        </div>
+                    </button>
+                    <button md-menu-item (click)="openUrl('downloadForWindows')">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img src="assets/images/os/windows.png" alt="OS" style="width:30px;">
+                            <span style="margin-left:10px;">Download for Windows</span>
+                        </div>
+                    </button>
+                    <button md-menu-item (click)="openUrl('downloadForMac')">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <img src="assets/images/os/mac.png" alt="OS" style="width:30px;">
+                            <span style="margin-left:10px;">Download for Mac</span>
+                        </div>
+                    </button>
+                </md-menu>
+            </div>
+        </div>
+        <div fxFlex>
+            <div fxLayout="column" style="padding:25px;">
+                <h2>Mining Software</h2>
+
+                <p>Use your Personal Computer to mine AMC and generate revenue.</p>
+                <div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
+                        <button md-button (click)="openUrl('http://www.americancoin.farm/gettingStarted')">
+                            More Information
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

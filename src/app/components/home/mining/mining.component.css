@@ -1,0 +1,24 @@
+.mining-container{
+
+}
+
+.mining-container div{
+    padding:25px;
+}
+
+.mining-container img{
+    max-width: 100%;
+}
+
+
+p{
+    font-size: 24px;
+    font-weight: 100;
+}
+
+button{
+    padding:10px;
+    font-size:20px;
+    font-weight: 200;
+    color:#1a237e;
+}

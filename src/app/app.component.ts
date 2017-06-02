@@ -1,20 +1,47 @@
-import { Component, OnInit , ViewChild , ElementRef, Inject } from '@angular/core';
-import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RoutesRecognized } from '@angular/router';
+// Core imports
+import {
+    Component,
+    OnInit,
+    ViewChild,
+    HostListener,
+    ElementRef,
+    Inject } from '@angular/core';
 
+// Router imports
+import {
+    Router,
+    Event as RouterEvent,
+    NavigationStart,
+    NavigationEnd,
+    NavigationCancel,
+    NavigationError
+} from '@angular/router';
+
+// Other
+import { appAnimations } from './shared/animations/app.animations';
 import { TranslateService } from './languages';
-import {MdSnackBar, MdSidenav} from '@angular/material';
+import {
+    MdSnackBar,
+    MdSidenav } from '@angular/material';
 import { DOCUMENT } from '@angular/platform-browser';
-import {PageScrollService, PageScrollInstance} from 'ng2-page-scroll';
+import {
+    PageScrollService,
+    PageScrollInstance } from 'ng2-page-scroll';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    animations: [ appAnimations.favPanelAnimation() ]
 })
 
 export class AppComponent implements OnInit {
+
+    public favState: string = 'inactive';
     public selectedLanguage: any;
     public supportedLangs: any;
+    public loading: boolean;
+
 
     @ViewChild('sidenav') public _sidenav: MdSidenav;
     @ViewChild('container')
@@ -22,34 +49,44 @@ export class AppComponent implements OnInit {
 
     constructor(private _translate: TranslateService,
                 private _snackBar: MdSnackBar,
-                private _router: Router,
                 private _pageScrollService: PageScrollService,
-                @Inject(DOCUMENT) private document: any) {
+                @Inject(DOCUMENT) private document: any,
+                private _router: Router) {
         /*
-        * Routing Subscription
+        * Router states subscriber
         * */
-        this._router.events.subscribe((val) => {
-            // see also
-            if (val instanceof NavigationStart) {
-                if (this._sidenav.opened) {
-                    this._sidenav.close();
-                }
-            }else if (val instanceof NavigationEnd) {
-
-            }else if (val instanceof NavigationCancel) {
-
-            }else if (val instanceof NavigationError) {
-
-            }else if (val instanceof RoutesRecognized) {}
+        _router.events.subscribe((event: RouterEvent) => {
+            if (event instanceof NavigationStart) {
+                this.loading = true;
+            }
+            if (event instanceof NavigationEnd) {
+                this.loading = false;
+            }
+            if (event instanceof NavigationCancel) {
+                this.loading = false;
+            }
+            if (event instanceof NavigationError) {
+                this.loading = false;
+            }
         });
     }
 
 
     /*
-    * Language Related
-    * */
-    ngOnInit() {
+     * Scroll Listener
+     * */
 
+    @HostListener('window:scroll', [])
+    onWindowScroll(): void {
+        const number = this.document.body.scrollTop;
+        if (number > 50) { this.favState = 'active'; } else { this.favState = 'inactive'; }
+    }
+
+
+    /*
+     * Language Related
+     * */
+    ngOnInit() {
         // Translations
         this.supportedLangs = [
             { display: 'English', value: 'en' },
@@ -63,7 +100,6 @@ export class AppComponent implements OnInit {
 
         this.selectedLanguage = TranslateService.buildLanguage(locale);
         this._translate.use(locale);
-
     }
 
     selectLang(lang: string) {
@@ -82,18 +118,8 @@ export class AppComponent implements OnInit {
 
 
     /*
-    * URL Loading
-    * */
-
-    openUrl (location: string): void {
-        window.open(location, '_blank');
-    }
-
-
-
-    /*
-    * Scroll to Top
-    * */
+     * Scroll
+     * */
 
     scrollToTop(): void {
         const pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#inner-app-scroll-container');

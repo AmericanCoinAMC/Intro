@@ -1,102 +1,20 @@
 
 
-<div class="app-container" id="inner-app-scroll-container" >
+<div class="app-container" id="inner-app-scroll-container">
 
-    <md-sidenav-container>
-        <md-toolbar class="page-header">
-            <div fxFlex>
-                <div fxLayout="row" fxLayoutAlign="start center">
-                    <img src="assets/images/logo.png" alt="logo">
-                    <h3>AtomicAppSeed</h3>
-
-                    <span fxFlex></span>
-
-                    <div fxShow.xs="false">
-                        <button md-button routerLink="/home" [routerLinkActive]="['active-navigation']">
-                            Nav
-                        </button>
-
-                        <button md-button routerLink="/about" [routerLinkActive]="['active-navigation']">
-                            Nav
-                        </button>
-
-                        <button md-button routerLink="/services" [routerLinkActive]="['active-navigation']">
-                            Nav
-                        </button>
-
-                        <button md-button routerLink="/portfolio" [routerLinkActive]="['active-navigation']">
-                            Nav
-                        </button>
-                    </div>
-
-                    <button md-icon-button [mdMenuTriggerFor]="menu" class="language-button">
-                        <img src="assets/images/{{selectedLanguage.value}}.png" alt="Language">
-                    </button>
-
-                    <md-menu #menu="mdMenu">
-                        <button md-menu-item
-                                *ngFor="let langs of supportedLangs; let i = index"
-                                (click)="selectLang(langs.value)" class="language-button">
-                            <div fxLayout="row" fxLayoutAlign="start center">
-                                <img src="assets/images/{{langs.value}}.png" alt="Language"> &nbsp;
-                                {{langs.display}}
-                            </div>
-                        </button>
-                    </md-menu>
-
-                    <button md-icon-button (click)="sidenav.toggle()" fxShow.xs="true" fxHide="true">
-                        <md-icon *ngIf="!sidenav.opened">menu</md-icon>
-                        <md-icon *ngIf="sidenav.opened">arrow_forward</md-icon>
-                    </button>
-                </div>
-            </div>
-        </md-toolbar>
-
-
-        <!-- Router Outlet -->
-        <div>
-            <router-outlet></router-outlet>
+    <div class="page-loader" *ngIf="loading">
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
+            <img src="assets/images/logohr.png" alt="logo">
         </div>
+    </div>
 
+    <router-outlet></router-outlet>
 
-
-
-        <!-- Side Navigation -->
-        <md-sidenav #sidenav class="sidenav" mode="over" align="end">
-            <md-list class="clickable-list" style="text-align:left;" fxFlex>
-                <md-list-item>
-                    <button md-button fxFlex routerLink="/home"  [routerLinkActive]="['active-navigation']">
-                        <span class="item-title">Nav</span>
-                    </button>
-                </md-list-item>
-
-
-                <md-list-item>
-                    <button md-button fxFlex routerLink="/about" [routerLinkActive]="['active-navigation']">
-                        <span class="item-title">Nav</span>
-                    </button>
-                </md-list-item>
-
-
-                <md-list-item>
-                    <button md-button routerLink="/services" [routerLinkActive]="['active-navigation']">
-                        <span class="item-title">Nav</span>
-                    </button>
-                </md-list-item>
-
-
-                <md-list-item>
-                    <button md-button fxFlex routerLink="/portfolio" [routerLinkActive]="['active-navigation']">
-                        <span class="item-title">Nav</span>
-                    </button>
-                </md-list-item>
-            </md-list>
-        </md-sidenav>
-    </md-sidenav-container>
-
-
-
-    <button md-mini-fab class="page-fab" (click)="scrollToTop()">
+    <button md-mini-fab
+            class="page-fab"
+            id="page-nav"
+            (click)="scrollToTop()"
+            [@favPanel]="favState">
         <md-icon>arrow_upward</md-icon>
     </button>
 </div>

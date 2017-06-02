@@ -1,0 +1,26 @@
+.amc-description{
+    font-size:26px;
+    font-weight: 100;
+    margin:35px;
+    text-align: center;
+}
+
+.active-item{
+    background: #e0e0e0;
+}
+
+
+.whatis-section-container{
+    margin:10px;
+    text-align: center;
+}
+
+.whatis-section p {
+    font-size:22px;
+    font-weight: 200;
+}
+
+.whatis-section img{
+    max-width:100%;
+    height:auto;
+}

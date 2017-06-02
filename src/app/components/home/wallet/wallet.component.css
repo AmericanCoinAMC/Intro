@@ -1,0 +1,25 @@
+.wallet-container{
+    padding:25px 25px 0 25px;
+    background:#071b33;
+    text-align:center;
+}
+
+h2, p{
+    color:white;
+}
+
+h2{
+    font-size:34px;
+    margin:10px 0 0 0;
+}
+
+p{
+    font-size:23px;
+    font-weight: 200;
+    margin: 20px 0 0 0px;
+}
+
+.wallet-container img{
+    margin-top:25px;
+    max-width: 100%;
+}
