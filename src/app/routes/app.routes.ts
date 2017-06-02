@@ -7,22 +7,11 @@ import { HomeComponent } from '../components/home/home.component';
 export const routes: Routes = [
     {
         path: '',
-        canActivateChild: [MetaGuard],
-        children: [
-            {
-                path: '',
-                redirectTo: 'home',
-                pathMatch: 'full'
-            },
-            {
-                path: 'home',
-                component: HomeComponent,
-                data: {
-                    meta: {
-                        title: 'AmericanCoin - In Descentralization We Trust',
-                    }
-                }
+        component: HomeComponent,
+        data: {
+            meta: {
+                title: 'AmericanCoin - In Descentralization We Trust',
             }
-        ]
+        }
     }
 ];
