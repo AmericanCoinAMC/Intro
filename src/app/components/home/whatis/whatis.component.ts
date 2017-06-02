@@ -87,7 +87,9 @@ export class WhatisComponent implements OnInit {
         this.sectionState = 'disabled';
         setTimeout(function(){
             self.activeSection = section;
-            self.sectionState = 'enabled';
+            setTimeout(function(){
+                self.sectionState = 'enabled';
+            }, 500);
         }, 500);
     };
 
