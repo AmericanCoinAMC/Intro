@@ -1,4 +1,4 @@
-# AtomicAppSeed - Angular 4, Angular Material, AngularFire & AtomicBase
+# AmericanCoin - In Descentralization We Trust
 
 
 
